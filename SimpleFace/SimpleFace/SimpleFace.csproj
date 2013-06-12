@@ -65,4 +65,7 @@
     <None Include="Resources\NinaB.tinyfnt" />
     <None Include="Resources\small.tinyfnt" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hat.gif" />
+  </ItemGroup>
 </Project>

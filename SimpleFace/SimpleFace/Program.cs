@@ -37,7 +37,8 @@ namespace SimpleFace
             Debug.Print("Face paint starting");
             //paintCenteredDate(device);
             //paintBigDate(device);
-            paintBinaryWatch(device);
+            //paintBinaryWatch(device);
+            hatWithTime(device);
         }
 
         private static void watchFace_OnSetupCompleted(WatchFace face, Device device)
@@ -45,6 +46,15 @@ namespace SimpleFace
             device.Border = new Border() { Thickness = 1, FooterHeight = 0, HeaderHeight = 0 };
             //device.Border = new Border() {Thickness = 1, FooterHeight = device.NinaBFont.Height + 2, HeaderHeight = 10};
         }
+        
+        private static void hatWithTime(Device device)
+        {
+            var img = new Bitmap(Resources.GetBytes(Resources.BinaryResources.hat), Bitmap.BitmapImageType.Gif);
+            device.DrawingSurface.DrawImage((Device.AgentSize / 2) - (img.Width / 2), 1, img, 0, 0, img.Width, img.Height );
+
+            device.Painter.PaintCentered(device.HourMinute, device.DefaultFont, Color.White);
+        }
+        
 
         private static void paintBinaryWatch(Device device)
         {

@@ -130,4 +130,7 @@
   <data name="Candara48NPSSp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Candara48NPSSp.tinyfnt;System.Byte[], mscorlib, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
+  <data name="hat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\hat.gif;System.Byte[], mscorlib, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
 </root>
