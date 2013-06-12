@@ -13,11 +13,11 @@ Usage
 =====
 
 To create your own WatchFace:
-# Download the source, make sure it builds
-# Add a new class in the "Faces" folder
-# On the source file for the class, and implement the interface Agent.Faces.IFace (there are a few samples you can learn from)
-# Open Program.cs in the Agent.Faces project and change this line to call your new face:
-# WatchFace.Start(new MyNewFace());
+1. Download the source, make sure it builds
+2. Add a new class in the "Faces" folder
+3. On the source file for the class, and implement the interface Agent.Faces.IFace (there are a few samples you can learn from)
+4. Open Program.cs in the Agent.Faces project and change this line to call your new face:
+5. WatchFace.Start(new MyNewFace());
 
 
 More
