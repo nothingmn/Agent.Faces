@@ -13,6 +13,14 @@ namespace SimpleFace
             bitmap = Canvas;
         }
 
+        public void PaintCentered(string Text, Font Font, Color Color, int y)
+        {
+            int x, y1 = 0;
+            FindCenter(Text, Font, out x, out y1);
+           
+            bitmap.DrawText(Text, Font, Color, x, y);
+        }
+
         public void PaintCentered(string Text, Font Font, Color Color)
         {
 
@@ -31,6 +39,7 @@ namespace SimpleFace
             x = center - centerText;
 
             y = center - (Font.Height/2);
+
 
         }
     }

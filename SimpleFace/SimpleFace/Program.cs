@@ -36,12 +36,13 @@ namespace SimpleFace
             Debug.Print("Face paint starting");
 
             device.Painter.PaintCentered(device.HourMinute, device.DefaultFont, Color.White);
-
+            device.Painter.PaintCentered(device.ShortDate, device.NinaBFont, Color.White, Device.AgentSize - device.Border.FooterHeight + 1);
+            
         }
 
         static void watchFace_OnSetupCompleted(WatchFace face, Device device)
         {
-            device.Border = new Border() { Thickness = 1, FooterHeight = 10, HeaderHeight = 10 };     
+            device.Border = new Border() { Thickness = 1, FooterHeight = device.NinaBFont.Height + 2, HeaderHeight = 10 };     
         }
 
 

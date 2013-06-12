@@ -30,6 +30,12 @@ namespace SimpleFace
         public string Hour24Minute { get { return Hour24 + ":" + Minute; } }
         public string HourMinuteSecond { get { return Hour + ":" + Minute + ":" + Second; } }
         public string Hour24MinuteSecond { get { return Hour24 + ":" + Minute + ":" + Second; } }
+
+        public string Month { get { return Time.Month.ToString(); } }
+        public string Day { get { return Time.Day.ToString(); } }
+        public string Year { get { return Time.Year.ToString(); } }
+        public string DayOfWeek { get { return Time.DayOfWeek.ToString(); } }
+        public string ShortDate { get { return Year + "/" + Month + "/" + Day; } }
         
 
         public string Hour 

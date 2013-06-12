@@ -18,17 +18,17 @@ namespace SimpleFace
         {
             if (Thickness > 0)
             {
-                DrawingSurface.DrawRectangle(Color.White, Thickness, 0, 0, Device.AgentSize, Device.AgentSize, 0, 0,
+                DrawingSurface.DrawRectangle(Color.White, Thickness, 1, 1, Device.AgentSize, Device.AgentSize, 0, 0,
                                              Color.Black, 0, 0, Color.Black, 0, 0, 0);
 
                 if (HeaderHeight > 0)
                 {
-                    DrawingSurface.DrawLine(Color.White, Thickness, 0, HeaderHeight, Device.AgentSize, HeaderHeight);
+                    DrawingSurface.DrawLine(Color.White, Thickness, 1, HeaderHeight, Device.AgentSize, HeaderHeight);
 
                 }
                 if (FooterHeight > 0)
                 {
-                    DrawingSurface.DrawLine(Color.White, Thickness, 0, Device.AgentSize - FooterHeight, Device.AgentSize, Device.AgentSize - FooterHeight);
+                    DrawingSurface.DrawLine(Color.White, Thickness, 1, Device.AgentSize - FooterHeight, Device.AgentSize, Device.AgentSize - FooterHeight);
 
                 }
             }
