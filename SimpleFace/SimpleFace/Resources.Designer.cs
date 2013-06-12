@@ -29,18 +29,10 @@ namespace SimpleFace
         {
             return ((Microsoft.SPOT.Font)(Microsoft.SPOT.ResourceUtility.GetObject(ResourceManager, id)));
         }
-        internal static string GetString(Resources.StringResources id)
-        {
-            return ((string)(Microsoft.SPOT.ResourceUtility.GetObject(ResourceManager, id)));
-        }
-        [System.SerializableAttribute()]
-        internal enum StringResources : short
-        {
-            String1 = 1228,
-        }
         [System.SerializableAttribute()]
         internal enum FontResources : short
         {
+            Candara48NPSSp = -12315,
             BookAntiquaNumbers = 10697,
             small = 13070,
             NinaB = 18060,

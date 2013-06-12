@@ -30,7 +30,7 @@ namespace SimpleFace
             bitmap.DrawText(Text, Font, Color, x, y);
         }
 
-        private void FindCenter(string Text, Font Font, out int x, out int y)
+        public void FindCenter(string Text, Font Font, out int x, out int y)
         {
             int charWidth = Font.CharWidth('0');
             int size = Text.Length*charWidth;

@@ -64,7 +64,14 @@ namespace SimpleFace
         {
             get { return Time.Year.ToString(); }
         }
-
+        public string MonthName
+        {
+            get { return System.Globalization.DateTimeFormatInfo.CurrentInfo.MonthNames[(int)Time.Month]; }
+        }
+        public string MonthNameShort
+        {
+            get { return System.Globalization.DateTimeFormatInfo.CurrentInfo.AbbreviatedMonthNames[(int)Time.Month]; }
+        }
         public string DayOfWeek
         {
             get { return System.Globalization.DateTimeFormatInfo.CurrentInfo.DayNames[(int) Time.DayOfWeek]; }
@@ -161,11 +168,12 @@ namespace SimpleFace
             get { return _NinaBFont; }
         }
 
-        private Font _BookAntiquaNumbers = Resources.GetFont(Resources.FontResources.BookAntiquaNumbers);
+        private Font _Candara48NPSSp = Resources.GetFont(Resources.FontResources.Candara48NPSSp);
+        //private Font _BookAntiquaNumbers = Resources.GetFont(Resources.FontResources.BookAntiquaNumbers);
 
         public Font DefaultFont
         {
-            get { return _BookAntiquaNumbers; }
+            get { return _Candara48NPSSp; }
         }
     }
 }

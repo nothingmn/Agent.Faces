@@ -121,13 +121,13 @@
   <data name="small" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>resources\small.tinyfnt;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="String1" xml:space="preserve">
-    <value>Hello World!</value>
-  </data>
   <data name="NinaB" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\NinaB.tinyfnt;System.Byte[], mscorlib, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="BookAntiquaNumbers" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\BookAntiquaNumbers.tinyfnt;System.Byte[], mscorlib, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="Candara48NPSSp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Candara48NPSSp.tinyfnt;System.Byte[], mscorlib, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>
