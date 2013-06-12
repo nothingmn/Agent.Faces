@@ -12,7 +12,7 @@ namespace Agent.Faces
         public static void Main()
         {
             var WatchFace = new WatchFace();
-            WatchFace.Start(new SimpleDigitalFace(), 60);
+            WatchFace.Start(new SunriseAndSet(), 60);
         }
 
     }

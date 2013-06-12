@@ -11,7 +11,9 @@ namespace Agent.Faces
             Time = new Time();
             Border = new Border();
         }
-
+        
+        
+        public Location Location { get; set; }
         public Border Border { get; set; }
 
         public static int ScreenHeight

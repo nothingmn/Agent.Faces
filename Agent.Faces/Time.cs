@@ -9,6 +9,7 @@ namespace Agent.Faces
         {
             CurrentTime = DateTime.Now;
         }
+
         public DateTime CurrentTime { get; set; }
 
         public string AMPM
@@ -25,6 +26,10 @@ namespace Agent.Faces
             get { return Hour + ":" + Minute; }
         }
 
+        public string HourMinuteAMPM
+        {
+            get { return Hour + ":" + Minute + " " + AMPM; }
+        }
         public string Hour24Minute
         {
             get { return Hour24 + ":" + Minute; }
@@ -54,17 +59,20 @@ namespace Agent.Faces
         {
             get { return CurrentTime.Year.ToString(); }
         }
+
         public string MonthName
         {
-            get { return System.Globalization.DateTimeFormatInfo.CurrentInfo.MonthNames[(int)CurrentTime.Month]; }
+            get { return System.Globalization.DateTimeFormatInfo.CurrentInfo.MonthNames[(int) CurrentTime.Month]; }
         }
+
         public string MonthNameShort
         {
-            get { return System.Globalization.DateTimeFormatInfo.CurrentInfo.AbbreviatedMonthNames[(int)CurrentTime.Month]; }
+            get { return System.Globalization.DateTimeFormatInfo.CurrentInfo.AbbreviatedMonthNames[(int) CurrentTime.Month]; }
         }
+
         public string DayOfWeek
         {
-            get { return System.Globalization.DateTimeFormatInfo.CurrentInfo.DayNames[(int)CurrentTime.DayOfWeek]; }
+            get { return System.Globalization.DateTimeFormatInfo.CurrentInfo.DayNames[(int) CurrentTime.DayOfWeek]; }
         }
 
         public string ShortDate
@@ -103,6 +111,13 @@ namespace Agent.Faces
                 return min;
 
             }
+        }
+
+
+        public Suntime Suntimes(Location location)
+        {
+            return SunTimes.Instance.CalculateSunRiseSetTimes(location, CurrentTime);           
+
         }
 
         public string Second

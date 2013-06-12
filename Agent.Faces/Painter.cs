@@ -24,27 +24,34 @@ namespace Agent.Faces
             return size;
         }
 
-        public void PaintCentered(string Text, Font Font, Color Color, int y)
+        public void PaintBottomCenter(string text, Font font, Color color)
         {
-            int x, y1 = 0;
-            FindCenter(Text, Font, out x, out y1);
-
-            bitmap.DrawText(Text, Font, Color, x, y);
+            int x, y = 0;
+            FindCenter(text, font, out x, out y);
+            bitmap.DrawText(text, font, color, x, Device.AgentSize - font.Height);
         }
 
-        public void PaintCentered(string Text, Font Font, Color Color)
+        public void PaintCentered(string text, Font Font, Color Color, int y)
+        {
+            int x, y1 = 0;
+            FindCenter(text, Font, out x, out y1);
+
+            bitmap.DrawText(text, Font, Color, x, y);
+        }
+
+        public void PaintCentered(string text, Font Font, Color Color)
         {
 
             int x, y = 0;
-            FindCenter(Text, Font, out x, out y);
+            FindCenter(text, Font, out x, out y);
 
-            bitmap.DrawText(Text, Font, Color, x, y);
+            bitmap.DrawText(text, Font, Color, x, y);
         }
 
-        public void FindCenter(string Text, Font Font, out int x, out int y)
+        public void FindCenter(string text, Font Font, out int x, out int y)
         {
 
-            int size = MeasureString(Text, Font);
+            int size = MeasureString(text, Font);
             int center = Device.AgentSize/2;
             int centerText = size/2 - 2;
             x = center - centerText;
