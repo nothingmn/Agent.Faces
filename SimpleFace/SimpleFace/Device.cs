@@ -12,6 +12,7 @@ namespace SimpleFace
         }
 
         public Border Border { get; set; }
+
         public static int ScreenHeight
         {
             get { return SystemMetrics.ScreenHeight; }
@@ -22,23 +23,60 @@ namespace SimpleFace
             get { return SystemMetrics.ScreenWidth; }
         }
 
-        public static int AgentSize { get { return 128; } }
+        public static int AgentSize
+        {
+            get { return 128; }
+        }
 
         public DateTime Time { get; set; }
 
-        public string HourMinute { get { return Hour + ":" + Minute; } }
-        public string Hour24Minute { get { return Hour24 + ":" + Minute; } }
-        public string HourMinuteSecond { get { return Hour + ":" + Minute + ":" + Second; } }
-        public string Hour24MinuteSecond { get { return Hour24 + ":" + Minute + ":" + Second; } }
+        public string HourMinute
+        {
+            get { return Hour + ":" + Minute; }
+        }
 
-        public string Month { get { return Time.Month.ToString(); } }
-        public string Day { get { return Time.Day.ToString(); } }
-        public string Year { get { return Time.Year.ToString(); } }
-        public string DayOfWeek { get { return Time.DayOfWeek.ToString(); } }
-        public string ShortDate { get { return Year + "/" + Month + "/" + Day; } }
-        
+        public string Hour24Minute
+        {
+            get { return Hour24 + ":" + Minute; }
+        }
 
-        public string Hour 
+        public string HourMinuteSecond
+        {
+            get { return Hour + ":" + Minute + ":" + Second; }
+        }
+
+        public string Hour24MinuteSecond
+        {
+            get { return Hour24 + ":" + Minute + ":" + Second; }
+        }
+
+        public string Month
+        {
+            get { return Time.Month.ToString(); }
+        }
+
+        public string Day
+        {
+            get { return Time.Day.ToString(); }
+        }
+
+        public string Year
+        {
+            get { return Time.Year.ToString(); }
+        }
+
+        public string DayOfWeek
+        {
+            get { return System.Globalization.DateTimeFormatInfo.CurrentInfo.DayNames[(int) Time.DayOfWeek]; }
+        }
+
+        public string ShortDate
+        {
+            get { return Year + "/" + Month + "/" + Day; }
+        }
+
+
+        public string Hour
         {
             get
             {
@@ -46,10 +84,10 @@ namespace SimpleFace
                 int hour = Time.Hour;
                 if (hour > 12) hour = hour - 12;
                 var h = hour.ToString();
-                if (h.Length == 1) h = "0" + h;
                 return h;
             }
         }
+
         public string Hour24
         {
             get
@@ -60,6 +98,7 @@ namespace SimpleFace
                 return hour;
             }
         }
+
         public string Minute
         {
             get
@@ -71,6 +110,7 @@ namespace SimpleFace
 
             }
         }
+
         public string Second
         {
             get
@@ -85,7 +125,12 @@ namespace SimpleFace
         private object _lock = new object();
         private Bitmap _DrawingSurface;
         private Painter _painter;
-        public Painter Painter { get { return _painter; } }
+
+        public Painter Painter
+        {
+            get { return _painter; }
+        }
+
         public Bitmap DrawingSurface
         {
             get
@@ -95,7 +140,7 @@ namespace SimpleFace
                     if (_DrawingSurface == null)
                     {
                         _DrawingSurface = new Bitmap(ScreenWidth, ScreenHeight);
-                         _painter = new Painter(_DrawingSurface);
+                        _painter = new Painter(_DrawingSurface);
                     }
                 }
                 return _DrawingSurface;

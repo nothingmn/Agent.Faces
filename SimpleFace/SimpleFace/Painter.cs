@@ -17,7 +17,7 @@ namespace SimpleFace
         {
             int x, y1 = 0;
             FindCenter(Text, Font, out x, out y1);
-           
+
             bitmap.DrawText(Text, Font, Color, x, y);
         }
 
@@ -35,7 +35,7 @@ namespace SimpleFace
             int charWidth = Font.CharWidth('0');
             int size = Text.Length*charWidth;
             int center = Device.AgentSize/2;
-            int centerText = size/2;
+            int centerText = size/2 - 2;
             x = center - centerText;
 
             y = center - (Font.Height/2);

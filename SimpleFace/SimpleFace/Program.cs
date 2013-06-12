@@ -17,6 +17,7 @@ namespace SimpleFace
 
         public static void Main()
         {
+            //setup our watch face, and wait until we can paint, etc.
             var face = new WatchFace();
             face.OnSetupCompleted += watchFace_OnSetupCompleted;
             face.OnPaint += watchFace_OnPaint;
@@ -36,8 +37,12 @@ namespace SimpleFace
             Debug.Print("Face paint starting");
 
             device.Painter.PaintCentered(device.HourMinute, device.DefaultFont, Color.White);
-            device.Painter.PaintCentered(device.ShortDate, device.NinaBFont, Color.White, Device.AgentSize - device.Border.FooterHeight + 1);
+
+            //print full date along the bottom
+            //device.Painter.PaintCentered(device.ShortDate, device.NinaBFont, Color.White, Device.AgentSize - device.Border.FooterHeight + 1);
             
+            //print the day of the week in the footer
+            device.Painter.PaintCentered(device.DayOfWeek, device.NinaBFont, Color.White, Device.AgentSize - device.Border.FooterHeight + 1);
         }
 
         static void watchFace_OnSetupCompleted(WatchFace face, Device device)
