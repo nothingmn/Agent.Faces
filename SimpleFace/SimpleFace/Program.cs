@@ -39,10 +39,10 @@ namespace SimpleFace
             device.Painter.PaintCentered(device.HourMinute, device.DefaultFont, Color.White);
 
             //print full date along the bottom
-            //device.Painter.PaintCentered(device.ShortDate, device.NinaBFont, Color.White, Device.AgentSize - device.Border.FooterHeight + 1);
+            device.Painter.PaintCentered(device.ShortDate, device.NinaBFont, Color.White, Device.AgentSize - device.Border.FooterHeight + 1);
             
             //print the day of the week in the footer
-            device.Painter.PaintCentered(device.DayOfWeek, device.NinaBFont, Color.White, Device.AgentSize - device.Border.FooterHeight + 1);
+            //device.Painter.PaintCentered(device.DayOfWeek, device.NinaBFont, Color.White, Device.AgentSize - device.Border.FooterHeight + 1);
         }
 
         static void watchFace_OnSetupCompleted(WatchFace face, Device device)
