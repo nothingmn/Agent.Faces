@@ -39,13 +39,25 @@ namespace SimpleFace
             //paintBigDate(device);
             //paintBinaryWatch(device);
             //hatWithTime(device);
-            bareHands(device);
+            //bareHands(device);
+
+            goMarioGo(device);
         }
 
         private static void watchFace_OnSetupCompleted(WatchFace face, Device device)
         {
             device.Border = new Border() {Thickness = 1, FooterHeight = 0, HeaderHeight = 0};
             //device.Border = new Border() {Thickness = 1, FooterHeight = device.NinaBFont.Height + 2, HeaderHeight = 10};
+        }
+
+        private static void goMarioGo(Device device)
+        {
+            string time = (device.HourMinute + " " + device.AMPM).ToLower();
+            device.Painter.PaintCentered(Resources.GetBytes(Resources.BinaryResources.Mario), Bitmap.BitmapImageType.Gif);
+
+            int x = (Device.AgentSize / 2) - (device.Painter.MeasureString(time, device.NinaBFont) / 2);
+            int y = Device.AgentSize - device.NinaBFont.Height + 1;
+            device.DrawingSurface.DrawText(time, device.NinaBFont, Color.Black, x, y);
         }
 
         private static void bareHands(Device device)

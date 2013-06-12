@@ -30,6 +30,15 @@ namespace SimpleFace
 
         public DateTime Time { get; set; }
 
+        public string AMPM
+        {
+            get
+            {
+                if (Time.Hour >= 12) return "PM";
+                return "AM";
+            }
+        }
+
         public string HourMinute
         {
             get { return Hour + ":" + Minute; }

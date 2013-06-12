@@ -69,4 +69,7 @@
   <ItemGroup>
     <None Include="Resources\hat.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mario.gif" />
+  </ItemGroup>
 </Project>

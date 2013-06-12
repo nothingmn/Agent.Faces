@@ -13,6 +13,17 @@ namespace SimpleFace
             bitmap = Canvas;
         }
 
+        public int MeasureString(string text, Font font)
+        {
+            if (text == null || text.Trim() == "") return 0;
+            int size = 0;
+            for (int i = 0; i < text.Length; i++)
+            {
+                size += font.CharWidth(text[i]);
+            }
+            return size;
+        }
+
         public void PaintCentered(string Text, Font Font, Color Color, int y)
         {
             int x, y1 = 0;

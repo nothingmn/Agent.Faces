@@ -133,4 +133,7 @@
   <data name="hat" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\hat.gif;System.Byte[], mscorlib, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
+  <data name="Mario" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Mario.gif;System.Byte[], mscorlib, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
 </root>
