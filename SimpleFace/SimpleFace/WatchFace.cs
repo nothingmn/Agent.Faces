@@ -30,6 +30,10 @@ namespace SimpleFace
                 //clear the display
                 CurrentDevice.DrawingSurface.Clear();
 
+                //render our border, if necessary
+                if (CurrentDevice.Border != null) CurrentDevice.Border.Draw(CurrentDevice.DrawingSurface);
+
+
                 //call the user code
                 if (OnPaint != null) OnPaint(this, CurrentDevice);
                 

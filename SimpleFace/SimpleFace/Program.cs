@@ -27,22 +27,21 @@ namespace SimpleFace
 
         static void face_OnComplete(WatchFace face, Device device)
         {
-            Debug.Print("Face print complete");
+            Debug.Print("Face paint complete");
         }
 
         static void watchFace_OnPaint(WatchFace face, Device device)
         {
-           
-            device.DrawingSurface.DrawText(device.HourMinute, device.DefaultFont, Color.White, 5, 5);
-            device.DrawingSurface.DrawLine(Color.White, 2, 0, 0, Device.ScreenWidth, Device.ScreenHeight);
-
-            if(device.Border !=null) device.Border.Draw(device.DrawingSurface);
             
+            Debug.Print("Face paint starting");
+
+            device.Painter.PaintCentered(device.HourMinute, device.DefaultFont, Color.White);
+
         }
 
         static void watchFace_OnSetupCompleted(WatchFace face, Device device)
         {
-            device.Border = new Border() { Thickness = 1, FooterHeight = 5, HeaderHeight = 5 };     
+            device.Border = new Border() { Thickness = 1, FooterHeight = 10, HeaderHeight = 10 };     
         }
 
 

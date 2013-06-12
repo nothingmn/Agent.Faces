@@ -22,15 +22,7 @@ namespace SimpleFace
             get { return SystemMetrics.ScreenWidth; }
         }
 
-        //public static int ScreenHeight
-        //{
-        //    get { return 128; } // SystemMetrics.ScreenHeight;
-        //}
-
-        //public static int ScreenWidth
-        //{
-        //    get { return 128; } // SystemMetrics.ScreenWidth; }
-        //}
+        public static int AgentSize { get { return 128; } }
 
         public DateTime Time { get; set; }
 
@@ -86,14 +78,19 @@ namespace SimpleFace
 
         private object _lock = new object();
         private Bitmap _DrawingSurface;
-
+        private Painter _painter;
+        public Painter Painter { get { return _painter; } }
         public Bitmap DrawingSurface
         {
             get
             {
                 lock (_lock)
                 {
-                    if (_DrawingSurface == null) _DrawingSurface = new Bitmap(ScreenWidth, ScreenHeight);
+                    if (_DrawingSurface == null)
+                    {
+                        _DrawingSurface = new Bitmap(ScreenWidth, ScreenHeight);
+                         _painter = new Painter(_DrawingSurface);
+                    }
                 }
                 return _DrawingSurface;
             }
