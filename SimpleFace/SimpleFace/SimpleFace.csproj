@@ -63,8 +63,11 @@
   <ItemGroup>
     <None Include="Resources\BookAntiquaNumbers.tinyfnt" />
     <None Include="Resources\Candara48NPSSp.tinyfnt" />
+    <None Include="Resources\Digital712point.tinyfnt" />
+    <None Include="Resources\Digital720point.tinyfnt" />
     <None Include="Resources\NinaB.tinyfnt" />
     <None Include="Resources\small.tinyfnt" />
+    <None Include="Resources\TripleDot8Point.tinyfnt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\hat.gif" />

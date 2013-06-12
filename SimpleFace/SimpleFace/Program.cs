@@ -41,7 +41,10 @@ namespace SimpleFace
             //hatWithTime(device);
             //bareHands(device);
 
-            goMarioGo(device);
+            //goMarioGo(device);
+
+            simpleDigital(device);
+
         }
 
         private static void watchFace_OnSetupCompleted(WatchFace face, Device device)
@@ -49,7 +52,12 @@ namespace SimpleFace
             device.Border = new Border() {Thickness = 1, FooterHeight = 0, HeaderHeight = 0};
             //device.Border = new Border() {Thickness = 1, FooterHeight = device.NinaBFont.Height + 2, HeaderHeight = 10};
         }
+        private static void simpleDigital(Device device)
+        {
+            string time = (device.HourMinute + " " + device.AMPM).ToLower();
 
+            device.Painter.PaintCentered(time, device.Digital20, Color.White);
+        }
         private static void goMarioGo(Device device)
         {
             string time = (device.HourMinute + " " + device.AMPM).ToLower();

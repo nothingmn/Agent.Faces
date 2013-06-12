@@ -133,7 +133,16 @@
   <data name="hat" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\hat.gif;System.Byte[], mscorlib, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
+  <data name="Digital712point" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Digital712point.tinyfnt;System.Byte[], mscorlib, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="Digital720point" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Digital720point.tinyfnt;System.Byte[], mscorlib, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
   <data name="Mario" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Mario.gif;System.Byte[], mscorlib, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="TripleDot8Point" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\TripleDot8Point.tinyfnt;System.Byte[], mscorlib, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

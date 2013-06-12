@@ -193,5 +193,18 @@ namespace SimpleFace
         {
             get { return _medium; }
         }
+
+        private Font _Digital12 = Resources.GetFont(Resources.FontResources.Digital712point);
+
+        public Font Digital12
+        {
+            get { return _Digital12; }
+        }  
+        private Font _Digital20 = Resources.GetFont(Resources.FontResources.Digital720point);
+
+        public Font Digital20
+        {
+            get { return _Digital20; }
+        }
     }
 }
