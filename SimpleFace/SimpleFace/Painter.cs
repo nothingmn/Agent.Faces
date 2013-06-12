@@ -42,5 +42,54 @@ namespace SimpleFace
 
 
         }
+        public void PaintCentered(byte[] ImageData, Bitmap.BitmapImageType ImageType)
+        {
+            var img = new Bitmap(ImageData, ImageType);
+            int x = (Device.AgentSize / 2) - (img.Width / 2);
+            int y = (Device.AgentSize / 2) - (img.Height / 2);
+            bitmap.DrawImage(x, y, img, 0, 0, img.Width, img.Height);
+            
+        }
+
+
+        const int TRANSLATE_RADIUS_SECONDS = 47;
+        const int TRANSLATE_RADIUS_MINUTES = 40;
+        const int TRANSLATE_RADIUS_HOURS = 30;
+
+        public void DrawMinuteHand(Color color, int thickness, int minute, int second)
+        {
+            int min = (int)((6 * minute) + (0.1 * second));      // Jump to Minute and add offset for 6 degrees over 60 seconds'
+            Point p = PointOnCircle(TRANSLATE_RADIUS_MINUTES, min + (-90), Device.Center);
+            DrawLine(color, thickness, Device.Center, p);
+        }
+        public void DrawSecondHand(Color color, int thickness, int second)
+        {
+            int sec = 6 * second;
+            Point p = PointOnCircle(TRANSLATE_RADIUS_SECONDS, sec + (-90), Device.Center);
+            DrawLine(color, thickness, Device.Center, p);
+        }
+
+        public void DrawHourHand(Color color, int thickness, int hour, int minute)
+        {
+            int hr = (int)((30 * (hour % 12)) + (0.5 * minute)); // Jump to Hour and add offset for 30 degrees over 60 minutes
+            Point p = PointOnCircle(TRANSLATE_RADIUS_HOURS, hr + (-90), Device.Center);
+            DrawLine(color, thickness, Device.Center, p);
+
+        }
+
+        public void DrawLine(Color color, int thickness, Point start, Point end)
+        {
+            bitmap.DrawLine(color, thickness, start.X, start.Y, end.X, end.Y);
+        }
+
+
+        private Point PointOnCircle(float radius, float angleInDegrees, Point origin)
+        {
+            return new Point(
+                (int)(radius * System.Math.Cos(angleInDegrees * System.Math.PI / 180F)) + origin.X,
+                (int)(radius * System.Math.Sin(angleInDegrees * System.Math.PI / 180F)) + origin.Y
+            );
+        }
+
     }
 }

@@ -168,6 +168,11 @@ namespace SimpleFace
             get { return _NinaBFont; }
         }
 
+        public static Point Center
+        {
+            get { return new Point(64, 64); }
+        }
+
         private Font _Candara48NPSSp = Resources.GetFont(Resources.FontResources.Candara48NPSSp);
         public Font DefaultFont
         {

@@ -13,7 +13,7 @@ namespace SimpleFace
         /// <summary>
         /// 1000 = 1 second
         /// </summary>
-        private static int updateSpeed = 1000*5;
+        private static int updateSpeed = 1000*1;
 
         public static void Main()
         {
@@ -38,23 +38,33 @@ namespace SimpleFace
             //paintCenteredDate(device);
             //paintBigDate(device);
             //paintBinaryWatch(device);
-            hatWithTime(device);
+            //hatWithTime(device);
+            bareHands(device);
         }
 
         private static void watchFace_OnSetupCompleted(WatchFace face, Device device)
         {
-            device.Border = new Border() { Thickness = 1, FooterHeight = 0, HeaderHeight = 0 };
+            device.Border = new Border() {Thickness = 1, FooterHeight = 0, HeaderHeight = 0};
             //device.Border = new Border() {Thickness = 1, FooterHeight = device.NinaBFont.Height + 2, HeaderHeight = 10};
         }
-        
+
+        private static void bareHands(Device device)
+        {
+            var time = DateTime.Now;
+            device.Painter.DrawHourHand(Color.White, 1, time.Hour, time.Minute);
+            device.Painter.DrawMinuteHand(Color.White, 1, time.Minute, time.Second);
+            device.Painter.DrawSecondHand(Color.White, 1, time.Second);
+
+        }
+
         private static void hatWithTime(Device device)
         {
             var img = new Bitmap(Resources.GetBytes(Resources.BinaryResources.hat), Bitmap.BitmapImageType.Gif);
-            device.DrawingSurface.DrawImage((Device.AgentSize / 2) - (img.Width / 2), 1, img, 0, 0, img.Width, img.Height );
+            device.DrawingSurface.DrawImage((Device.AgentSize/2) - (img.Width/2), 1, img, 0, 0, img.Width, img.Height);
 
             device.Painter.PaintCentered(device.HourMinute, device.DefaultFont, Color.White);
         }
-        
+
 
         private static void paintBinaryWatch(Device device)
         {
@@ -91,7 +101,7 @@ namespace SimpleFace
             Debug.Print(hour.ToString());
             var assembled = (h_eight + h_four + h_two + h_one).Trim();
             Debug.Print(assembled);
-            
+
             var m_thirtytwo = " - ";
             var m_sixteen = " - ";
             var m_eight = " - ";
@@ -130,16 +140,16 @@ namespace SimpleFace
                 min -= 1;
             }
             var minutes = (m_thirtytwo + m_sixteen + m_eight + m_four + m_two + m_one).Trim();
-            int top = (Device.AgentSize/2) - device.NinaBFont.Height * 3;
+            int top = (Device.AgentSize/2) - device.NinaBFont.Height*3;
 
-            device.DrawingSurface.DrawText("Hour:", device.NinaBFont,Color.White,  2, top);
+            device.DrawingSurface.DrawText("Hour:", device.NinaBFont, Color.White, 2, top);
             top = top + device.NinaBFont.Height + 1;
-            
+
             device.Painter.PaintCentered(assembled, device.NinaBFont, Color.White, top);
-            
+
             top = top + device.NinaBFont.Height*2 + 1;
-            device.DrawingSurface.DrawText("Minute:", device.NinaBFont, Color.White,  2, top);
-            
+            device.DrawingSurface.DrawText("Minute:", device.NinaBFont, Color.White, 2, top);
+
             top = top + device.NinaBFont.Height + 1;
             device.Painter.PaintCentered(minutes, device.NinaBFont, Color.White, top);
 
@@ -163,7 +173,8 @@ namespace SimpleFace
 
             device.Painter.PaintCentered(time, device.DefaultFont, Color.White);
 
-            device.DrawingSurface.DrawText(date, device.NinaBFont, Color.White, Device.AgentSize - (ninaWidth * date.Length), defHeight * 2 + 2);
+            device.DrawingSurface.DrawText(date, device.NinaBFont, Color.White,
+                                           Device.AgentSize - (ninaWidth*date.Length), defHeight*2 + 2);
 
         }
 
