@@ -2,7 +2,7 @@ using System;
 using Microsoft.SPOT;
 using Microsoft.SPOT.Presentation.Media;
 
-namespace SimpleFace
+namespace Agent.Faces
 {
     public class Painter
     {
@@ -43,8 +43,8 @@ namespace SimpleFace
 
         public void FindCenter(string Text, Font Font, out int x, out int y)
         {
-            int charWidth = (Font.CharWidth(' ') + Font.CharWidth('0'))/2;
-            int size = Text.Length*charWidth;
+
+            int size = MeasureString(Text, Font);
             int center = Device.AgentSize/2;
             int centerText = size/2 - 2;
             x = center - centerText;

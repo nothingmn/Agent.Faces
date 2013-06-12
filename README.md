@@ -12,21 +12,13 @@ http://www.kickstarter.com/projects/secretlabs/agent-the-worlds-smartest-watch/c
 Usage
 =====
 
-You have two options to control painting of the face of the watch.
+To create your own WatchFace:
+# Download the source, make sure it builds
+# Add a new class in the "Faces" folder
+# On the source file for the class, and implement the interface Agent.Faces.IFace (there are a few samples you can learn from)
+# Open Program.cs in the Agent.Faces project and change this line to call your new face:
+# WatchFace.Start(new MyNewFace());
 
-1. OnPaint event.  
-
-static void watchFace_OnPaint(WatchFace face, Device device){
-//place your custom face painting in this method
-
-}
-
-static void watchFace_OnSetupCompleted(WatchFace face, Device device) {
-//this will fire once per app start, before any face painting
-//example use would be to control the border like so...
-device.Border = new Border() { Thickness = 1, FooterHeight = device.NinaBFont.Height + 2, HeaderHeight = 10 };     
-
-}
 
 More
 ====

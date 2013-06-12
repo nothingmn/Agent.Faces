@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SimpleFace
+namespace Agent.Faces
 {
     
     internal partial class Resources
@@ -20,7 +20,7 @@ namespace SimpleFace
             {
                 if ((Resources.manager == null))
                 {
-                    Resources.manager = new System.Resources.ResourceManager("SimpleFace.Resources", typeof(Resources).Assembly);
+                    Resources.manager = new System.Resources.ResourceManager("Agent.Faces.Resources", typeof(Resources).Assembly);
                 }
                 return Resources.manager;
             }
@@ -29,26 +29,16 @@ namespace SimpleFace
         {
             return ((Microsoft.SPOT.Font)(Microsoft.SPOT.ResourceUtility.GetObject(ResourceManager, id)));
         }
-        internal static byte[] GetBytes(Resources.BinaryResources id)
-        {
-            return ((byte[])(Microsoft.SPOT.ResourceUtility.GetObject(ResourceManager, id)));
-        }
         [System.SerializableAttribute()]
         internal enum FontResources : short
         {
             Digital720point = -31240,
             Candara48NPSSp = -12315,
-            TripleDot8Point = -8807,
             Digital712point = -5624,
             BookAntiquaNumbers = 10697,
             small = 13070,
+            small1 = 14787,
             NinaB = 18060,
-        }
-        [System.SerializableAttribute()]
-        internal enum BinaryResources : short
-        {
-            Mario = -24242,
-            hat = 17847,
         }
     }
 }

@@ -2,7 +2,7 @@ using System;
 using Microsoft.SPOT;
 using Microsoft.SPOT.Presentation.Media;
 
-namespace SimpleFace
+namespace Agent.Faces
 {
     public class Border
     {

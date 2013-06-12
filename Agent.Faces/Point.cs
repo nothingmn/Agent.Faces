@@ -1,7 +1,7 @@
 using System;
 using Microsoft.SPOT;
 
-namespace SimpleFace
+namespace Agent.Faces
 {
     public class Point
     {
