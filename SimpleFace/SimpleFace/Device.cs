@@ -169,11 +169,15 @@ namespace SimpleFace
         }
 
         private Font _Candara48NPSSp = Resources.GetFont(Resources.FontResources.Candara48NPSSp);
-        //private Font _BookAntiquaNumbers = Resources.GetFont(Resources.FontResources.BookAntiquaNumbers);
-
         public Font DefaultFont
         {
             get { return _Candara48NPSSp; }
+        }
+        private Font _medium = Resources.GetFont(Resources.FontResources.BookAntiquaNumbers);
+
+        public Font MediumFont
+        {
+            get { return _medium; }
         }
     }
 }
