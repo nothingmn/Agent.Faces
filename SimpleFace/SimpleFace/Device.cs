@@ -12,11 +12,25 @@ namespace SimpleFace
         }
 
         public Border Border { get; set; }
-
         public static int ScreenHeight
         {
-            get { return 128; } // SystemMetrics.ScreenHeight;
+            get { return SystemMetrics.ScreenHeight; }
         }
+
+        public static int ScreenWidth
+        {
+            get { return SystemMetrics.ScreenWidth; }
+        }
+
+        //public static int ScreenHeight
+        //{
+        //    get { return 128; } // SystemMetrics.ScreenHeight;
+        //}
+
+        //public static int ScreenWidth
+        //{
+        //    get { return 128; } // SystemMetrics.ScreenWidth; }
+        //}
 
         public DateTime Time { get; set; }
 
@@ -68,11 +82,6 @@ namespace SimpleFace
                 if (seconds.Length == 1) seconds = "0" + seconds;
                 return seconds;
             }
-        }
-
-        public static int ScreenWidth
-        {
-            get { return 128; } // SystemMetrics.ScreenWidth; }
         }
 
         private object _lock = new object();

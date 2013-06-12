@@ -17,26 +17,24 @@ namespace SimpleFace
 
         public static void Main()
         {
-            var face = new Face();
-            face.OnSetupCompleted += face_OnSetupCompleted;
-            face.OnPaint += face_OnPaint;
+            var face = new WatchFace();
+            face.OnSetupCompleted += watchFace_OnSetupCompleted;
+            face.OnPaint += watchFace_OnPaint;
             face.Start(updateSpeed);
 
         }
 
-        static void face_OnPaint(Face face, Device device)
+        static void watchFace_OnPaint(WatchFace face, Device device)
         {
            
-            device.DrawingSurface.DrawText(device.HourMinute, device.DefaultFont, Color.White, 5, 5);
-            device.DrawingSurface.DrawLine(Color.Black, 2, 0, 0, Device.ScreenWidth, Device.ScreenHeight);
+            device.DrawingSurface.DrawText(device.HourMinute, device.SmallFont, Color.White, 5, 5);
+            device.DrawingSurface.DrawLine(Color.White, 2, 0, 0, Device.ScreenWidth, Device.ScreenHeight);
 
             if(device.Border !=null) device.Border.Draw(device.DrawingSurface);
 
-            //remember to call complete, we are all done painting
-            face.Complete();
         }
 
-        static void face_OnSetupCompleted(Face face, Device device)
+        static void watchFace_OnSetupCompleted(WatchFace face, Device device)
         {
             device.Border = new Border() { Thickness = 1, FooterHeight = 5, HeaderHeight = 5 };     
         }
