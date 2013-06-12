@@ -11,6 +11,9 @@ namespace SimpleFace
         public event SetupCompleted OnSetupCompleted;
         public delegate void Paint(WatchFace face, Device device);
         public event Paint OnPaint;
+        
+        public delegate void Complete(WatchFace face, Device device);
+        public event Complete OnComplete;
 
         public Device CurrentDevice { get; set; }
 
@@ -33,6 +36,7 @@ namespace SimpleFace
                 //flush the image out to the device
                 CurrentDevice.DrawingSurface.Flush();
 
+                if (OnComplete != null) OnComplete(this, CurrentDevice);
 
             }, null, 1, PaintSpeed);
 

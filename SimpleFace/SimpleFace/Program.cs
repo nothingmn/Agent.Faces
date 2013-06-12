@@ -20,18 +20,24 @@ namespace SimpleFace
             var face = new WatchFace();
             face.OnSetupCompleted += watchFace_OnSetupCompleted;
             face.OnPaint += watchFace_OnPaint;
+            face.OnComplete += face_OnComplete;
             face.Start(updateSpeed);
 
+        }
+
+        static void face_OnComplete(WatchFace face, Device device)
+        {
+            Debug.Print("Face print complete");
         }
 
         static void watchFace_OnPaint(WatchFace face, Device device)
         {
            
-            device.DrawingSurface.DrawText(device.HourMinute, device.SmallFont, Color.White, 5, 5);
+            device.DrawingSurface.DrawText(device.HourMinute, device.DefaultFont, Color.White, 5, 5);
             device.DrawingSurface.DrawLine(Color.White, 2, 0, 0, Device.ScreenWidth, Device.ScreenHeight);
 
             if(device.Border !=null) device.Border.Draw(device.DrawingSurface);
-
+            
         }
 
         static void watchFace_OnSetupCompleted(WatchFace face, Device device)
