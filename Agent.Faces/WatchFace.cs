@@ -10,16 +10,16 @@ namespace Agent.Faces
 
         public Device Device { get; set; }
 
-        public void Start(IFace Face, int PaintSpeed = 60)
+        public void Start(IFace face, int paintSpeedInSeconds = 60)
         {
-            if (Face == null) throw new ArgumentNullException("Face cannot be null");
+            if (face == null) throw new ArgumentNullException("Face cannot be null");
             // Included font is used in the clock
             Device = new Device();
             Device.Location = new Location() {Latitude = -122.2444, Longitude = 49.3};
             var timer = new Timer(state =>
                 {
                     //update our local time reference
-                    Device.Time.CurrentTime = DateTime.Now;
+                    Device.Time.CurrentTime = DateTime.Now; // Device.Time.CurrentTime.AddMinutes(1);
 
                     //clear the display
                     Device.DrawingSurface.Clear();
@@ -28,14 +28,14 @@ namespace Agent.Faces
                     if (Device.Border != null) Device.Border.Draw(Device.DrawingSurface);
 
                     //call the user code
-                    Face.RenderFace(Device);
+                    face.RenderFace(Device);
 
 
                     //flush the image out to the device
                     Device.DrawingSurface.Flush();
 
 
-                }, null, 1, PaintSpeed);
+                }, null, 1, paintSpeedInSeconds * 1000);
 
             Thread.Sleep(Timeout.Infinite);
         }

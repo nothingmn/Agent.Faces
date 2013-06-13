@@ -35,6 +35,7 @@
     <Compile Include="Faces\BareHands.cs" />
     <Compile Include="Faces\BinaryFace.cs" />
     <Compile Include="Faces\BigDate.cs" />
+    <Compile Include="Faces\Lunar.cs" />
     <Compile Include="Faces\SunriseAndSet.cs" />
     <Compile Include="Faces\TimeWithDayOfWeek.cs" />
     <Compile Include="Faces\DateAndTime.cs" />

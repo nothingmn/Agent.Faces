@@ -74,24 +74,34 @@ namespace Agent.Faces
         const int TRANSLATE_RADIUS_MINUTES = 40;
         const int TRANSLATE_RADIUS_HOURS = 30;
 
-        public void DrawMinuteHand(Color color, int thickness, int minute, int second)
+        public Point MinuteHandLocation(int minute, int second)
         {
             int min = (int)((6 * minute) + (0.1 * second));      // Jump to Minute and add offset for 6 degrees over 60 seconds'
-            Point p = PointOnCircle(TRANSLATE_RADIUS_MINUTES, min + (-90), Device.Center);
-            DrawLine(color, thickness, Device.Center, p);
+            return PointOnCircle(TRANSLATE_RADIUS_MINUTES, min + (-90), Device.Center);
+        }
+        public Point HourHandLocation(int hour, int minute)
+        {
+            int hr = (int)((30 * (hour % 12)) + (0.5 * minute)); // Jump to Hour and add offset for 30 degrees over 60 minutes
+            return PointOnCircle(TRANSLATE_RADIUS_HOURS, hr + (-90), Device.Center);
+        }
+        public Point SecondHandLocation(int second)
+        {
+            int sec = 6 * second;
+            return PointOnCircle(TRANSLATE_RADIUS_SECONDS, sec + (-90), Device.Center);
+        }
+        public void DrawMinuteHand(Color color, int thickness, int minute, int second)
+        {
+            DrawLine(color, thickness, Device.Center, MinuteHandLocation(minute, second));
         }
         public void DrawSecondHand(Color color, int thickness, int second)
         {
-            int sec = 6 * second;
-            Point p = PointOnCircle(TRANSLATE_RADIUS_SECONDS, sec + (-90), Device.Center);
-            DrawLine(color, thickness, Device.Center, p);
+            
+            DrawLine(color, thickness, Device.Center, SecondHandLocation(second));
         }
 
         public void DrawHourHand(Color color, int thickness, int hour, int minute)
         {
-            int hr = (int)((30 * (hour % 12)) + (0.5 * minute)); // Jump to Hour and add offset for 30 degrees over 60 minutes
-            Point p = PointOnCircle(TRANSLATE_RADIUS_HOURS, hr + (-90), Device.Center);
-            DrawLine(color, thickness, Device.Center, p);
+            DrawLine(color, thickness, Device.Center, HourHandLocation(hour, minute));
 
         }
 
