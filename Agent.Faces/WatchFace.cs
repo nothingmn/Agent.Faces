@@ -24,7 +24,7 @@ namespace Agent.Faces
             buttonHelper.OnButtonPress += buttonHelper_OnButtonPress;
 
         }
-        public void Start(IFace face, int paintSpeedInSeconds = 60)
+        public void Start(IFace face, double paintSpeedInSeconds = 60)
         {
             if (face == null) throw new ArgumentNullException("Face cannot be null");
             Face = face;
@@ -35,7 +35,9 @@ namespace Agent.Faces
                     Debug.Print("Tick");
 
                     //update our local time reference
-                    Device.Time.CurrentTime = DateTime.Now; // Device.Time.CurrentTime.AddMinutes(1);
+                    //Device.Time.CurrentTime = DateTime.Now; //just normal
+                    //Device.Time.CurrentTime = Device.Time.CurrentTime.AddMinutes(1); //speedy time
+                    Device.Time.CurrentTime = new DateTime(2011, 12, 16, 12, 4, 0, 0); //hard coded time
 
                     //clear the display
                     Device.DrawingSurface.Clear();
@@ -51,7 +53,7 @@ namespace Agent.Faces
                     Device.DrawingSurface.Flush();
 
 
-                }, null, 1, paintSpeedInSeconds*1000);
+                }, null, 1, (int)(paintSpeedInSeconds*1000f));
             Debug.Print("Going to sleep");
             program.Run(program.MainWindow);
             //Thread.Sleep(Timeout.Infinite);

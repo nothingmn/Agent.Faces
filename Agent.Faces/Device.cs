@@ -101,5 +101,20 @@ namespace Agent.Faces
         {
             get { return _Digital20; }
         }
+
+        private Font _Buxton24 = Resources.GetFont(Resources.FontResources.Buxton24lcaseSpecial);
+
+        public Font Buxton24
+        {
+            get { return _Buxton24; }
+        }
+        private Font _Buxton20 = Resources.GetFont(Resources.FontResources.Buxton20lcaseSpecial);
+
+        public Font Buxton20
+        {
+            get { return _Buxton20; }
+        }
+
+
     }
 }

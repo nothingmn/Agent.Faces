@@ -13,7 +13,7 @@ namespace Agent.Faces
         {
             
             var watchFace = new WatchFace();
-            watchFace.Start(new MarioTime(), 5);
+            watchFace.Start(new BigTextFace(), 0.5);
         }
 
     }

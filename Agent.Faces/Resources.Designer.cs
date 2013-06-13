@@ -38,11 +38,13 @@ namespace Agent.Faces
         {
             Digital720point = -31240,
             Candara48NPSSp = -12315,
+            Buxton20lcaseSpecial = -11168,
             Digital712point = -5624,
             BookAntiquaNumbers = 10697,
             small = 13070,
             small1 = 14787,
             NinaB = 18060,
+            Buxton24lcaseSpecial = 18181,
         }
         [System.SerializableAttribute()]
         internal enum BinaryResources : short

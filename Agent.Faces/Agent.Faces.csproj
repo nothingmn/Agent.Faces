@@ -32,6 +32,7 @@
   <ItemGroup>
     <Compile Include="Border.cs" />
     <Compile Include="ButtonHelper.cs" />
+    <Compile Include="Faces\BigTextFace.cs" />
     <Compile Include="Faces\MarioTime.cs" />
     <Compile Include="Faces\SimpleDigitalWithButtons.cs" />
     <Compile Include="GPIOButtonInputProvider.cs" />
@@ -79,6 +80,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BookAntiquaNumbers.tinyfnt" />
+    <None Include="Resources\Buxton20lcaseSpecial.tinyfnt" />
+    <None Include="Resources\Buxton24lcaseSpecial.tinyfnt" />
     <None Include="Resources\Candara48NPSSp.tinyfnt" />
     <None Include="Resources\Digital712point.tinyfnt" />
     <None Include="Resources\Digital720point.tinyfnt" />
