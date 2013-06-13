@@ -23,6 +23,7 @@ namespace Agent.Faces
             }
             return size;
         }
+
         public void PaintBottomCenter(string text, Font font, Color color)
         {
             int x, y = 0;
@@ -59,42 +60,55 @@ namespace Agent.Faces
 
 
         }
+
+        public void PaintImage(byte[] imageData, Bitmap.BitmapImageType imageType, Point point)
+        {
+            var img = new Bitmap(imageData, imageType);
+            bitmap.DrawImage(point.X, point.Y, img, 0, 0, img.Height, img.Width);
+
+        }
+
         public void PaintCentered(byte[] ImageData, Bitmap.BitmapImageType ImageType)
         {
             var img = new Bitmap(ImageData, ImageType);
-            int x = (Device.AgentSize / 2) - (img.Width / 2);
-            int y = (Device.AgentSize / 2) - (img.Height / 2);
+            int x = (Device.AgentSize/2) - (img.Width/2);
+            int y = (Device.AgentSize/2) - (img.Height/2);
             bitmap.DrawImage(x, y, img, 0, 0, img.Width, img.Height);
-            
+
         }
 
 
-        const int TRANSLATE_RADIUS_SECONDS = 47;
-        const int TRANSLATE_RADIUS_MINUTES = 40;
-        const int TRANSLATE_RADIUS_HOURS = 30;
+        private const int TRANSLATE_RADIUS_SECONDS = 47;
+        private const int TRANSLATE_RADIUS_MINUTES = 40;
+        private const int TRANSLATE_RADIUS_HOURS = 30;
 
         public Point MinuteHandLocation(int minute, int second)
         {
-            int min = (int)((6 * minute) + (0.1 * second));      // Jump to Minute and add offset for 6 degrees over 60 seconds'
+            int min = (int) ((6*minute) + (0.1*second)); // Jump to Minute and add offset for 6 degrees over 60 seconds'
             return PointOnCircle(TRANSLATE_RADIUS_MINUTES, min + (-90), Device.Center);
         }
+
         public Point HourHandLocation(int hour, int minute)
         {
-            int hr = (int)((30 * (hour % 12)) + (0.5 * minute)); // Jump to Hour and add offset for 30 degrees over 60 minutes
+            int hr = (int) ((30*(hour%12)) + (0.5*minute));
+                // Jump to Hour and add offset for 30 degrees over 60 minutes
             return PointOnCircle(TRANSLATE_RADIUS_HOURS, hr + (-90), Device.Center);
         }
+
         public Point SecondHandLocation(int second)
         {
-            int sec = 6 * second;
+            int sec = 6*second;
             return PointOnCircle(TRANSLATE_RADIUS_SECONDS, sec + (-90), Device.Center);
         }
+
         public void DrawMinuteHand(Color color, int thickness, int minute, int second)
         {
             DrawLine(color, thickness, Device.Center, MinuteHandLocation(minute, second));
         }
+
         public void DrawSecondHand(Color color, int thickness, int second)
         {
-            
+
             DrawLine(color, thickness, Device.Center, SecondHandLocation(second));
         }
 
@@ -113,9 +127,9 @@ namespace Agent.Faces
         private Point PointOnCircle(float radius, float angleInDegrees, Point origin)
         {
             return new Point(
-                (int)(radius * System.Math.Cos(angleInDegrees * System.Math.PI / 180F)) + origin.X,
-                (int)(radius * System.Math.Sin(angleInDegrees * System.Math.PI / 180F)) + origin.Y
-            );
+                (int) (radius*System.Math.Cos(angleInDegrees*System.Math.PI/180F)) + origin.X,
+                (int) (radius*System.Math.Sin(angleInDegrees*System.Math.PI/180F)) + origin.Y
+                );
         }
 
     }

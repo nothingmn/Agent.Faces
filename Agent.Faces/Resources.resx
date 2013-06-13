@@ -139,4 +139,7 @@
   <data name="small1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\small.tinyfnt;System.Byte[], mscorlib, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
+  <data name="Mario_Time_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Mario-Time_1.gif;System.Byte[], mscorlib, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
 </root>

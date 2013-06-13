@@ -29,6 +29,10 @@ namespace Agent.Faces
         {
             return ((Microsoft.SPOT.Font)(Microsoft.SPOT.ResourceUtility.GetObject(ResourceManager, id)));
         }
+        internal static byte[] GetBytes(Resources.BinaryResources id)
+        {
+            return ((byte[])(Microsoft.SPOT.ResourceUtility.GetObject(ResourceManager, id)));
+        }
         [System.SerializableAttribute()]
         internal enum FontResources : short
         {
@@ -39,6 +43,11 @@ namespace Agent.Faces
             small = 13070,
             small1 = 14787,
             NinaB = 18060,
+        }
+        [System.SerializableAttribute()]
+        internal enum BinaryResources : short
+        {
+            Mario_Time_1 = -12343,
         }
     }
 }

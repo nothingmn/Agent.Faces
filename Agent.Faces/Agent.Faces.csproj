@@ -32,6 +32,7 @@
   <ItemGroup>
     <Compile Include="Border.cs" />
     <Compile Include="ButtonHelper.cs" />
+    <Compile Include="Faces\MarioTime.cs" />
     <Compile Include="Faces\SimpleDigitalWithButtons.cs" />
     <Compile Include="GPIOButtonInputProvider.cs" />
     <Compile Include="Device.cs" />
@@ -83,5 +84,8 @@
     <None Include="Resources\Digital720point.tinyfnt" />
     <None Include="Resources\NinaB.tinyfnt" />
     <None Include="Resources\small.tinyfnt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mario-Time_1.gif" />
   </ItemGroup>
 </Project>
