@@ -11,8 +11,9 @@ namespace Agent.Faces
     {
         public static void Main()
         {
-            var WatchFace = new WatchFace();
-            WatchFace.Start(new Lunar(), 1);
+            
+            var watchFace = new WatchFace();
+            watchFace.Start(new SimpleDigitalWithButtons(), 5);
         }
 
     }

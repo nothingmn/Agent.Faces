@@ -1,5 +1,7 @@
 using System;
 using Microsoft.SPOT;
+using Microsoft.SPOT.Hardware;
+using Microsoft.SPOT.Input;
 using Microsoft.SPOT.Presentation.Media;
 
 namespace Agent.Faces.Faces
@@ -93,6 +95,7 @@ namespace Agent.Faces.Faces
             top = top + device.NinaBFont.Height + 1;
             device.Painter.PaintCentered(minutes, device.NinaBFont, Color.White, top);
         }
+        public void OnButtonPress(object sender, ButtonEventArgs args, Button button, Device device) { }
 
     }
 }

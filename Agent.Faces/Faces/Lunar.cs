@@ -1,5 +1,7 @@
 using System;
 using Microsoft.SPOT;
+using Microsoft.SPOT.Hardware;
+using Microsoft.SPOT.Input;
 using Microsoft.SPOT.Presentation.Media;
 
 namespace Agent.Faces.Faces
@@ -36,7 +38,7 @@ namespace Agent.Faces.Faces
             //outer minute smaller circle
             var padding = rad + 3;
             device.DrawingSurface.DrawEllipse(Color.White, 1, minutePoint.X, minutePoint.Y, padding, padding, Color.Black, 0, 0,
-                                              Color.Black,0 , 0, 100);
+                                              Color.Black,0 , 0, 0);
 
             //hour text in the center
             device.Painter.PaintCentered(device.Time.Hour, device.DefaultFont, Color.White);
@@ -44,6 +46,7 @@ namespace Agent.Faces.Faces
             //minute text as the moon orbiting
             device.DrawingSurface.DrawText(device.Time.Minute, font, Color.White, x, y);
         }
+        public void OnButtonPress(object sender, ButtonEventArgs args, Button button, Device device) { }
 
     }
 }

@@ -31,6 +31,9 @@
   <Import Project="$(NetMfTargetsBaseDir)$(TargetFrameworkVersion)\CSharp.Targets" />
   <ItemGroup>
     <Compile Include="Border.cs" />
+    <Compile Include="ButtonHelper.cs" />
+    <Compile Include="Faces\SimpleDigitalWithButtons.cs" />
+    <Compile Include="GPIOButtonInputProvider.cs" />
     <Compile Include="Device.cs" />
     <Compile Include="Faces\BareHands.cs" />
     <Compile Include="Faces\BinaryFace.cs" />

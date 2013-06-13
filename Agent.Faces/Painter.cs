@@ -23,7 +23,6 @@ namespace Agent.Faces
             }
             return size;
         }
-
         public void PaintBottomCenter(string text, Font font, Color color)
         {
             int x, y = 0;

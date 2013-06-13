@@ -1,5 +1,7 @@
 using System;
 using Microsoft.SPOT;
+using Microsoft.SPOT.Hardware;
+using Microsoft.SPOT.Input;
 using Microsoft.SPOT.Presentation.Media;
 
 namespace Agent.Faces.Faces
@@ -14,6 +16,7 @@ namespace Agent.Faces.Faces
             device.Painter.DrawMinuteHand(Color.White, 1, time.Minute, time.Second);
             device.Painter.DrawSecondHand(Color.White, 1, time.Second);
         }
+        public void OnButtonPress(object sender, ButtonEventArgs args, Button button, Device device) { }
 
     }
 }

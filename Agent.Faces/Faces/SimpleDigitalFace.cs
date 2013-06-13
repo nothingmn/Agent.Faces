@@ -1,5 +1,7 @@
 using System;
 using Microsoft.SPOT;
+using Microsoft.SPOT.Hardware;
+using Microsoft.SPOT.Input;
 using Microsoft.SPOT.Presentation.Media;
 
 namespace Agent.Faces.Faces
@@ -13,6 +15,6 @@ namespace Agent.Faces.Faces
 
             device.Painter.PaintCentered(time, device.Digital20, Color.White);
         }
-
+        public void OnButtonPress(object sender, ButtonEventArgs args, Button button, Device device) { }
     }
 }

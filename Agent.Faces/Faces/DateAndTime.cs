@@ -1,5 +1,7 @@
 using System;
 using Microsoft.SPOT;
+using Microsoft.SPOT.Hardware;
+using Microsoft.SPOT.Input;
 using Microsoft.SPOT.Presentation.Media;
 
 namespace Agent.Faces.Faces
@@ -14,6 +16,7 @@ namespace Agent.Faces.Faces
             //print full date along the bottom
             device.Painter.PaintCentered(device.Time.ShortDate, device.NinaBFont, Color.White, Device.AgentSize - device.NinaBFont.Height);
         }
+        public void OnButtonPress(object sender, ButtonEventArgs args, Button button, Device device) { }
 
     }
 }
