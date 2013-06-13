@@ -115,6 +115,18 @@ namespace Agent.Faces
             get { return _Buxton20; }
         }
 
+        private Font _Courier32Bold = Resources.GetFont(Resources.FontResources.Courier32Bold);
+
+        public Font Courier32Bold
+        {
+            get { return _Courier32Bold; }
+        }
+        private Font _Courier72Bold = Resources.GetFont(Resources.FontResources.Courier72Bold);
+
+        public Font Courier72Bold
+        {
+            get { return _Courier72Bold; }
+        }
 
     }
 }

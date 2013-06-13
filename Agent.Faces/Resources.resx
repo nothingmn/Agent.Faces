@@ -148,4 +148,10 @@
   <data name="Buxton20lcaseSpecial" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Buxton20lcaseSpecial.tinyfnt;System.Byte[], mscorlib, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
+  <data name="Courier32Bold" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Courier32Bold.tinyfnt;System.Byte[], mscorlib, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="Courier72Bold" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Courier72Bold.tinyfnt;System.Byte[], mscorlib, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
 </root>
