@@ -154,4 +154,7 @@
   <data name="Courier72Bold" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Courier72Bold.tinyfnt;System.Byte[], mscorlib, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
+  <data name="App_Faces_Optical_Illusion_SquareWave" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\App_Faces_Optical_Illusion_SquareWave.gif;System.Byte[], mscorlib, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
 </root>

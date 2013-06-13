@@ -34,6 +34,7 @@
     <Compile Include="ButtonHelper.cs" />
     <Compile Include="Faces\BigTextFace.cs" />
     <Compile Include="Faces\BigTime.cs" />
+    <Compile Include="Faces\Illusion.cs" />
     <Compile Include="Faces\MarioTime.cs" />
     <Compile Include="Faces\SimpleDigitalWithButtons.cs" />
     <Compile Include="GPIOButtonInputProvider.cs" />
@@ -93,5 +94,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Mario-Time_1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\App_Faces_Optical_Illusion_SquareWave.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\App_Faces_Optical_Illusion_SquareWave.gif" />
   </ItemGroup>
 </Project>

@@ -52,6 +52,7 @@ namespace Agent.Faces
         internal enum BinaryResources : short
         {
             Mario_Time_1 = -12343,
+            App_Faces_Optical_Illusion_SquareWave = 27255,
         }
     }
 }
