@@ -157,4 +157,7 @@
   <data name="App_Faces_Optical_Illusion_SquareWave" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\App_Faces_Optical_Illusion_SquareWave.gif;System.Byte[], mscorlib, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
+  <data name="hoh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\hoh.gif;System.Byte[], mscorlib, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
 </root>

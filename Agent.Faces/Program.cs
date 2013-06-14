@@ -13,7 +13,7 @@ namespace Agent.Faces
         {
             
             var watchFace = new WatchFace();
-            watchFace.Start(new Illusion(), 30);
+            watchFace.Start(new HouseOfHorology(), 5);
         }
 
     }
