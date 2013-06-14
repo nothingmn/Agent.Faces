@@ -12,9 +12,9 @@ namespace Agent.Faces.Faces
         {
             device.Border = new Border() { Thickness = 1, FooterHeight = 0, HeaderHeight = 0 };
             var time = DateTime.Now;
-            device.Painter.DrawHourHand(Color.White, 1, time.Hour, time.Minute);
-            device.Painter.DrawMinuteHand(Color.White, 1, time.Minute, time.Second);
-            device.Painter.DrawSecondHand(Color.White, 1, time.Second);
+            device.Painter.PaintHourHand(Color.White, 1, time.Hour, time.Minute);
+            device.Painter.PaintMinuteHand(Color.White, 1, time.Minute, time.Second);
+            device.Painter.PaintSecondHand(Color.White, 1, time.Second);
         }
         public void OnButtonPress(object sender, ButtonEventArgs args, Button button, Device device) { }
 

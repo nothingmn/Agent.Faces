@@ -101,24 +101,24 @@ namespace Agent.Faces
             return PointOnCircle(TRANSLATE_RADIUS_SECONDS, sec + (-90), Device.Center);
         }
 
-        public void DrawMinuteHand(Color color, int thickness, int minute, int second)
+        public void PaintMinuteHand(Color color, int thickness, int minute, int second)
         {
-            DrawLine(color, thickness, Device.Center, MinuteHandLocation(minute, second));
+            PaintLine(color, thickness, Device.Center, MinuteHandLocation(minute, second));
         }
 
-        public void DrawSecondHand(Color color, int thickness, int second)
+        public void PaintSecondHand(Color color, int thickness, int second)
         {
 
-            DrawLine(color, thickness, Device.Center, SecondHandLocation(second));
+            PaintLine(color, thickness, Device.Center, SecondHandLocation(second));
         }
 
-        public void DrawHourHand(Color color, int thickness, int hour, int minute)
+        public void PaintHourHand(Color color, int thickness, int hour, int minute)
         {
-            DrawLine(color, thickness, Device.Center, HourHandLocation(hour, minute));
+            PaintLine(color, thickness, Device.Center, HourHandLocation(hour, minute));
 
         }
 
-        public void DrawLine(Color color, int thickness, Point start, Point end)
+        public void PaintLine(Color color, int thickness, Point start, Point end)
         {
             bitmap.DrawLine(color, thickness, start.X, start.Y, end.X, end.Y);
         }
