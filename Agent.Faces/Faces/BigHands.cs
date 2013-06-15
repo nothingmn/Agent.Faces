@@ -27,7 +27,8 @@ namespace Agent.Faces.Faces
 
 
 
-            device.Painter.PaintThickHands(device, true, true, false);
+            //device.Painter.PaintThickHands(device, true, true, false);
+            device.Painter.PaintSkinnyHands(device);
             
             
             

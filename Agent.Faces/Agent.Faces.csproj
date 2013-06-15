@@ -36,6 +36,7 @@
     <Compile Include="Faces\BigTime.cs" />
     <Compile Include="Faces\AnimationFace.cs" />
     <Compile Include="Faces\BigHands.cs" />
+    <Compile Include="Faces\AnimatedBigHands.cs" />
     <Compile Include="Faces\DigitalTimeZones.cs" />
     <Compile Include="Faces\MultiFace.cs" />
     <Compile Include="Faces\HouseOfHorology.cs" />

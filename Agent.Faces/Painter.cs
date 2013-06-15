@@ -132,11 +132,24 @@ namespace Agent.Faces
                 );
         }
 
-    
+        public void PaintSkinnyHands(Device device)
+        {
+            device.Painter.PaintHourHand(Color.White, 3, device.Time.CurrentTime.Hour, device.Time.CurrentTime.Minute);
+            device.Painter.PaintMinuteHand(Color.White, 2, device.Time.CurrentTime.Minute,
+                                           device.Time.CurrentTime.Second);
+            device.Painter.PaintSecondHand(Color.White, 1, device.Time.CurrentTime.Second);
+
+            device.DrawingSurface.DrawEllipse(Color.White, 1, Device.Center.X, Device.Center.Y, 3, 3, Color.White, 0, 0,
+                                  Color.White, 0, 0, 255);
+            device.DrawingSurface.DrawEllipse(Color.White, 1, Device.Center.X, Device.Center.Y, 2, 2, Color.Black, 0, 0,
+                                              Color.White, 0, 0, 255);
+
+        }
+
         public void PaintThickHands(Device device, bool HourThick = true, bool MinuteThick = true,
                                     bool SecondsThick = false)
         {
-            
+
 
             Point hourTop = device.Painter.HourHandLocation(device.Time.CurrentTime.Hour, device.Time.CurrentTime.Minute);
             Point minuteTop = device.Painter.MinuteHandLocation(device.Time.CurrentTime.Minute,
@@ -200,7 +213,7 @@ namespace Agent.Faces
 
             Point hourBottomLeft = new Point(top.X - width, top.Y + width);
             Point hourTopLeft = new Point(top.X + width, top.Y - width);
-            device.DrawingSurface.DrawLine(Color.White, 1, hourBottomLeft.X, hourBottomLeft.Y, hourTopLeft.X,
+            device.DrawingSurface.DrawLine(Color.White, 3, hourBottomLeft.X, hourBottomLeft.Y, hourTopLeft.X,
                                            hourTopLeft.Y);
 
             Point hourBottomRight = new Point(bottom.X - width, bottom.Y + width);
@@ -212,6 +225,9 @@ namespace Agent.Faces
                                            hourBottomRight.Y);
             device.DrawingSurface.DrawLine(Color.White, 1, hourTopLeft.X, hourTopLeft.Y, hourTopRight.X, hourTopRight.Y);
 
+
+
+            
         }
     }
 }
