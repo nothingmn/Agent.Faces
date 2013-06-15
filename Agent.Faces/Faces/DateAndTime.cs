@@ -16,7 +16,7 @@ namespace Agent.Faces.Faces
             //print full date along the bottom
             device.Painter.PaintCentered(device.Time.ShortDate, device.NinaBFont, Color.White, Device.AgentSize - device.NinaBFont.Height);
         }
-        public void OnButtonPress(object sender, ButtonEventArgs args, Button button, Device device) { }
+        public void OnButtonPress(Buttons button, InterruptPort port, ButtonDirection direction, DateTime time, Device device) { }
 
     }
 }

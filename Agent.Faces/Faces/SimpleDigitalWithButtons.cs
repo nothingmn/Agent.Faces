@@ -18,7 +18,7 @@ namespace Agent.Faces.Faces
             if (buttonWasPressed) PressedRender(device);
         }
 
-        public void OnButtonPress(object sender, ButtonEventArgs args, Button button, Device device)
+        public void OnButtonPress(Buttons button, InterruptPort port, ButtonDirection direction, DateTime time, Device device)
         {
             buttonWasPressed = !buttonWasPressed;
 

@@ -95,7 +95,7 @@ namespace Agent.Faces.Faces
             top = top + device.NinaBFont.Height + 1;
             device.Painter.PaintCentered(minutes, device.NinaBFont, Color.White, top);
         }
-        public void OnButtonPress(object sender, ButtonEventArgs args, Button button, Device device) { }
+        public void OnButtonPress(Buttons button, InterruptPort port, ButtonDirection direction, DateTime time, Device device) { }
 
     }
 }

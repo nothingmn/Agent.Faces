@@ -16,7 +16,7 @@ namespace Agent.Faces.Faces
             device.Painter.PaintMinuteHand(Color.White, 1, time.Minute, time.Second);
             device.Painter.PaintSecondHand(Color.White, 1, time.Second);
         }
-        public void OnButtonPress(object sender, ButtonEventArgs args, Button button, Device device) { }
+        public void OnButtonPress(Buttons button, InterruptPort port, ButtonDirection direction, DateTime time, Device device) { }
 
     }
 }

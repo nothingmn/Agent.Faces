@@ -8,6 +8,6 @@ namespace Agent.Faces
     public interface IFace
     {
         void RenderFace(Device device);
-        void OnButtonPress(object sender, ButtonEventArgs args,Button button, Device device);
+        void OnButtonPress(Buttons button, InterruptPort port, ButtonDirection direction, DateTime time, Device device);
     }
 }

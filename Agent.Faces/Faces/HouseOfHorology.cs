@@ -8,6 +8,7 @@ namespace Agent.Faces.Faces
 {
     public class HouseOfHorology : IFace      
     {
+        
         public void RenderFace(Device device)
         {
             device.Border = new Border() {Thickness = 1, FooterHeight = 0, HeaderHeight = 0};
@@ -25,6 +26,16 @@ namespace Agent.Faces.Faces
 
         }
 
-        public void OnButtonPress(object sender, ButtonEventArgs args, Button button, Device device) { }
+        public void OnButtonPress(Buttons button, InterruptPort port, ButtonDirection direction, DateTime time, Device device)
+        {
+            if (direction == ButtonDirection.Up)
+            {
+                if (button == Buttons.Top)
+                {
+                    
+                }
+            }
+
+        }
     }
 }
