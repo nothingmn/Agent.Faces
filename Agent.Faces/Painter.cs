@@ -91,7 +91,7 @@ namespace Agent.Faces
         public Point HourHandLocation(int hour, int minute)
         {
             int hr = (int) ((30*(hour%12)) + (0.5*minute));
-                // Jump to Hour and add offset for 30 degrees over 60 minutes
+            // Jump to Hour and add offset for 30 degrees over 60 minutes
             return PointOnCircle(TRANSLATE_RADIUS_HOURS, hr + (-90), Device.Center);
         }
 
@@ -132,34 +132,65 @@ namespace Agent.Faces
                 );
         }
 
-
-        public void PaintThickHands(Device device)
+    
+        public void PaintThickHands(Device device, bool HourThick = true, bool MinuteThick = true,
+                                    bool SecondsThick = false)
         {
-            Point textLocation = new Point(
-           Device.Center.X - (device.Painter.MeasureString("agent", device.SmallFont) / 2), Device.Center.Y - 30);
-            device.DrawingSurface.DrawText("agent", device.SmallFont, Color.White, textLocation.X, textLocation.Y);
-
+            
 
             Point hourTop = device.Painter.HourHandLocation(device.Time.CurrentTime.Hour, device.Time.CurrentTime.Minute);
             Point minuteTop = device.Painter.MinuteHandLocation(device.Time.CurrentTime.Minute,
                                                                 device.Time.CurrentTime.Second);
             Point secondTop = device.Painter.SecondHandLocation(device.Time.CurrentTime.Second);
-            PaintBigHand(hourTop, Device.Center, device);
-            PaintBigHand(minuteTop, Device.Center, device);
-            PaintBigHand(secondTop, Device.Center, device);
+            if (HourThick)
+            {
+                PaintBigHand(hourTop, Device.Center, device);
+            }
+            else
+            {
+                device.DrawingSurface.DrawLine(Color.White, 1, hourTop.X, hourTop.Y, Device.Center.X, Device.Center.Y);
 
+            }
+            if (MinuteThick)
+            {
+                PaintBigHand(minuteTop, Device.Center, device);
+            }
+            else
+            {
+                device.DrawingSurface.DrawLine(Color.White, 1, minuteTop.X, minuteTop.Y, Device.Center.X,
+                                               Device.Center.Y);
+
+            }
+            if (SecondsThick)
+            {
+                PaintBigHand(secondTop, Device.Center, device);
+            }
+            else
+            {
+                device.DrawingSurface.DrawLine(Color.White, 1, secondTop.X, secondTop.Y, Device.Center.X,
+                                               Device.Center.Y);
+            }
             //fill
-            PaintBigHand(hourTop, Device.Center, device, 1);
-            PaintBigHand(hourTop, Device.Center, device, 0);
-
-            PaintBigHand(minuteTop, Device.Center, device, 1);
-            PaintBigHand(minuteTop, Device.Center, device, 0);
-
-            PaintBigHand(secondTop, Device.Center, device, 1);
-            PaintBigHand(secondTop, Device.Center, device, 0);
-
+            if (HourThick)
+            {
+                PaintBigHand(hourTop, Device.Center, device, 1);
+                PaintBigHand(hourTop, Device.Center, device, 0);
+            }
+            if (MinuteThick)
+            {
+                PaintBigHand(minuteTop, Device.Center, device, 1);
+                PaintBigHand(minuteTop, Device.Center, device, 0);
+            }
+            if (SecondsThick)
+            {
+                PaintBigHand(secondTop, Device.Center, device, 1);
+                PaintBigHand(secondTop, Device.Center, device, 0);
+            }
             device.DrawingSurface.DrawEllipse(Color.White, 1, Device.Center.X, Device.Center.Y, 3, 3, Color.White, 0, 0,
                                               Color.White, 0, 0, 255);
+            device.DrawingSurface.DrawEllipse(Color.White, 1, Device.Center.X, Device.Center.Y, 2, 2, Color.Black, 0, 0,
+                                              Color.White, 0, 0, 255);
+
         }
 
         private void PaintBigHand(Point top, Point bottom, Device device, int width = 2)
@@ -175,9 +206,10 @@ namespace Agent.Faces
             Point hourBottomRight = new Point(bottom.X - width, bottom.Y + width);
             Point hourTopRight = new Point(bottom.X + width, bottom.Y - width);
             device.DrawingSurface.DrawLine(Color.White, 1, hourBottomRight.X, hourBottomRight.Y, hourTopRight.X,
-                                      hourTopRight.Y);
+                                           hourTopRight.Y);
 
-            device.DrawingSurface.DrawLine(Color.White, 1, hourBottomLeft.X, hourBottomLeft.Y, hourBottomRight.X, hourBottomRight.Y);
+            device.DrawingSurface.DrawLine(Color.White, 1, hourBottomLeft.X, hourBottomLeft.Y, hourBottomRight.X,
+                                           hourBottomRight.Y);
             device.DrawingSurface.DrawLine(Color.White, 1, hourTopLeft.X, hourTopLeft.Y, hourTopRight.X, hourTopRight.Y);
 
         }

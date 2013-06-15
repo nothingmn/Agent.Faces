@@ -160,7 +160,7 @@
   <data name="hoh" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\hoh.gif;System.Byte[], mscorlib, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="Face" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Face.gif;System.Byte[], mscorlib, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="WatchFaceFromScratch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\WatchFaceFromScratch.gif;System.Byte[], mscorlib, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

@@ -107,6 +107,6 @@
     <None Include="Resources\hoh.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Face.gif" />
+    <None Include="Resources\WatchFaceFromScratch.gif" />
   </ItemGroup>
 </Project>
