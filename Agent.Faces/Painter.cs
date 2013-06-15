@@ -132,5 +132,54 @@ namespace Agent.Faces
                 );
         }
 
+
+        public void PaintThickHands(Device device)
+        {
+            Point textLocation = new Point(
+           Device.Center.X - (device.Painter.MeasureString("agent", device.SmallFont) / 2), Device.Center.Y - 30);
+            device.DrawingSurface.DrawText("agent", device.SmallFont, Color.White, textLocation.X, textLocation.Y);
+
+
+            Point hourTop = device.Painter.HourHandLocation(device.Time.CurrentTime.Hour, device.Time.CurrentTime.Minute);
+            Point minuteTop = device.Painter.MinuteHandLocation(device.Time.CurrentTime.Minute,
+                                                                device.Time.CurrentTime.Second);
+            Point secondTop = device.Painter.SecondHandLocation(device.Time.CurrentTime.Second);
+            PaintBigHand(hourTop, Device.Center, device);
+            PaintBigHand(minuteTop, Device.Center, device);
+            PaintBigHand(secondTop, Device.Center, device);
+
+            //fill
+            PaintBigHand(hourTop, Device.Center, device, 1);
+            PaintBigHand(hourTop, Device.Center, device, 0);
+
+            PaintBigHand(minuteTop, Device.Center, device, 1);
+            PaintBigHand(minuteTop, Device.Center, device, 0);
+
+            PaintBigHand(secondTop, Device.Center, device, 1);
+            PaintBigHand(secondTop, Device.Center, device, 0);
+
+            device.DrawingSurface.DrawEllipse(Color.White, 1, Device.Center.X, Device.Center.Y, 3, 3, Color.White, 0, 0,
+                                              Color.White, 0, 0, 255);
+        }
+
+        private void PaintBigHand(Point top, Point bottom, Device device, int width = 2)
+        {
+
+            //2 pixels wide for white hand
+
+            Point hourBottomLeft = new Point(top.X - width, top.Y + width);
+            Point hourTopLeft = new Point(top.X + width, top.Y - width);
+            device.DrawingSurface.DrawLine(Color.White, 1, hourBottomLeft.X, hourBottomLeft.Y, hourTopLeft.X,
+                                           hourTopLeft.Y);
+
+            Point hourBottomRight = new Point(bottom.X - width, bottom.Y + width);
+            Point hourTopRight = new Point(bottom.X + width, bottom.Y - width);
+            device.DrawingSurface.DrawLine(Color.White, 1, hourBottomRight.X, hourBottomRight.Y, hourTopRight.X,
+                                      hourTopRight.Y);
+
+            device.DrawingSurface.DrawLine(Color.White, 1, hourBottomLeft.X, hourBottomLeft.Y, hourBottomRight.X, hourBottomRight.Y);
+            device.DrawingSurface.DrawLine(Color.White, 1, hourTopLeft.X, hourTopLeft.Y, hourTopRight.X, hourTopRight.Y);
+
+        }
     }
 }

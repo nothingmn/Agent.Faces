@@ -34,13 +34,14 @@
     <Compile Include="ButtonHelper.cs" />
     <Compile Include="Faces\BigTextFace.cs" />
     <Compile Include="Faces\BigTime.cs" />
+    <Compile Include="Faces\AnimationFace.cs" />
+    <Compile Include="Faces\BigHands.cs" />
     <Compile Include="Faces\DigitalTimeZones.cs" />
     <Compile Include="Faces\MultiFace.cs" />
     <Compile Include="Faces\HouseOfHorology.cs" />
     <Compile Include="Faces\Illusion.cs" />
     <Compile Include="Faces\MarioTime.cs" />
     <Compile Include="Faces\SimpleDigitalWithButtons.cs" />
-    <Compile Include="GPIOButtonInputProvider.cs" />
     <Compile Include="Device.cs" />
     <Compile Include="Faces\BareHands.cs" />
     <Compile Include="Faces\BinaryFace.cs" />
@@ -61,6 +62,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Size.cs" />
     <Compile Include="Suntime.cs" />
     <Compile Include="Suntimes.cs" />
     <Compile Include="Time.cs" />
@@ -103,5 +105,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\hoh.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Face.gif" />
   </ItemGroup>
 </Project>

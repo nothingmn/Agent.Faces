@@ -51,6 +51,7 @@ namespace Agent.Faces
         [System.SerializableAttribute()]
         internal enum BinaryResources : short
         {
+            Face = -30362,
             Mario_Time_1 = -12343,
             hoh = -11942,
             App_Faces_Optical_Illusion_SquareWave = 27255,
