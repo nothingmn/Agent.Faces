@@ -34,6 +34,7 @@
     <Compile Include="ButtonHelper.cs" />
     <Compile Include="Faces\BigTextFace.cs" />
     <Compile Include="Faces\BigTime.cs" />
+    <Compile Include="Faces\DigitalTimeZones.cs" />
     <Compile Include="Faces\MultiFace.cs" />
     <Compile Include="Faces\HouseOfHorology.cs" />
     <Compile Include="Faces\Illusion.cs" />

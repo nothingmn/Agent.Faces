@@ -13,7 +13,8 @@ namespace Agent.Faces
         {
             
             var watchFace = new WatchFace();
-            watchFace.Start(new MultiFace(), 5);
+            //watchFace.Start(new MultiFace(), 5);
+            watchFace.Start(new DigitalTimeZones(), 5);
         }
 
     }
