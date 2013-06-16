@@ -34,7 +34,7 @@ namespace Agent.Faces
 
                     //update our local time reference
                     //Device.Time.CurrentTime = DateTime.Now; //just normal
-                    //Device.Time.CurrentTime = Device.Time.CurrentTime.AddMinutes(1); //speedy time
+                    Device.Time.CurrentTime = Device.Time.CurrentTime.AddMinutes(1); //speedy time
                     //Device.Time.CurrentTime = new DateTime(2011, 12, 16, 12, 4, 0, 0); //hard coded time
 
                     //clear the display

@@ -18,27 +18,31 @@ namespace Agent.Faces.Faces
             device.Border = new Border() {Thickness = 1, FooterHeight = 0, HeaderHeight = 0};
             var font = device.Buxton20;
             var renderSep = (device.Time.CurrentTime.Minute < 10);
+            TextTime hourLiteralTime = TextTime.TextHourLiteral(device.Time.CurrentTime.Hour);
+            TextTime timeSepTime = TextTime.TextTimeSeperator();
+            TextTime minuteTime = TextTime.TextMinute(device.Time.CurrentTime.Minute);
+            TextTime hourFriendlyTime = TextTime.TextHourFriendly(device.Time.CurrentTime.Hour);
 
             if (renderSep)
             {
                 if (device.Time.CurrentTime.Minute > 0)
                 {
-                    device.DrawingSurface.DrawText(device.Time.TextHourLiteral, font, Color.White, 1, 20);
-                    device.DrawingSurface.DrawText(device.Time.TextTimeSeperator, font, Color.White, 1, 50);
-                    device.DrawingSurface.DrawText(device.Time.TextMinute, font, Color.White, 1, 78);
+                    device.DrawingSurface.DrawText(hourLiteralTime.Text, Resources.GetFont((Resources.FontResources)hourLiteralTime.FontHour), Color.White, 1, 20);
+                    device.DrawingSurface.DrawText(timeSepTime.Text, Resources.GetFont((Resources.FontResources)timeSepTime.FontMinute), Color.White, 1, 50);
+                    device.DrawingSurface.DrawText(minuteTime.Text, Resources.GetFont((Resources.FontResources)minuteTime.FontMinute), Color.White, 1, 78);
                 }
                 else
                 {
 
-                    device.DrawingSurface.DrawText(device.Time.TextHourFriendly, font, Color.White, 1,
+                    device.DrawingSurface.DrawText(hourFriendlyTime.Text, Resources.GetFont((Resources.FontResources)hourFriendlyTime.FontHour), Color.White, 1,
                                                    (Device.AgentSize/2) - (font.Height/2));
 
                 }
             }
             else
             {
-                device.DrawingSurface.DrawText(device.Time.TextHourLiteral, font, Color.White, 1, 25);
-                device.DrawingSurface.DrawText(device.Time.TextMinute, font, Color.White, 1, 65);
+                device.DrawingSurface.DrawText(hourLiteralTime.Text, Resources.GetFont((Resources.FontResources)hourLiteralTime.FontHour), Color.White, 1, 25);
+                device.DrawingSurface.DrawText(minuteTime.Text, Resources.GetFont((Resources.FontResources)minuteTime.FontMinute), Color.White, 1, 65);
 
             }
         }

@@ -37,16 +37,23 @@ namespace Agent.Faces
         internal enum FontResources : short
         {
             Digital720point = -31240,
+            SegoeUI23Bold = -27413,
+            SegoeUI18Regular = -17753,
             Candara48NPSSp = -12315,
             Buxton20lcaseSpecial = -11168,
             Digital712point = -5624,
+            SegoeUI14Regular = 2094,
             Courier72Bold = 4200,
             BookAntiquaNumbers = 10697,
             Courier32Bold = 11324,
+            SegoeUI18Bold = 11730,
             small = 13070,
             small1 = 14787,
+            SegoeUI14Bold = 15854,
             NinaB = 18060,
+            SegoeUI12Regular = 18149,
             Buxton24lcaseSpecial = 18181,
+            SegoeUI23Regular = 26621,
         }
         [System.SerializableAttribute()]
         internal enum BinaryResources : short

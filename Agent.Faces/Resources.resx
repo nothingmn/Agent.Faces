@@ -166,4 +166,25 @@
   <data name="RobChartiervCard" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\RobChartiervCard.gif;System.Byte[], mscorlib, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
+  <data name="SegoeUI18Bold" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\SegoeUI18Bold.tinyfnt;System.Byte[], mscorlib, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="SegoeUI18Regular" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\SegoeUI18Regular.tinyfnt;System.Byte[], mscorlib, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="SegoeUI12Regular" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\SegoeUI12Regular.tinyfnt;System.Byte[], mscorlib, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="SegoeUI14Bold" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\SegoeUI14Bold.tinyfnt;System.Byte[], mscorlib, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="SegoeUI14Regular" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\SegoeUI14Regular.tinyfnt;System.Byte[], mscorlib, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="SegoeUI23Bold" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\SegoeUI23Bold.tinyfnt;System.Byte[], mscorlib, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="SegoeUI23Regular" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\SegoeUI23Regular.tinyfnt;System.Byte[], mscorlib, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
 </root>
