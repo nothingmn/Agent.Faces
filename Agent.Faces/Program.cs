@@ -16,8 +16,8 @@ namespace Agent.Faces
             //watchFace.Start(new MultiFace(), 5);
             //watchFace.Start(new AnimationFace(), 0);
             //watchFace.Start(new BigHands(), 1);
-            watchFace.Start(new AnimatedBigHands(), 0);
-            
+            //watchFace.Start(new AnimatedBigHands(), 0);
+            watchFace.Start(new SimpleDigitalFaceQR(), 5);
             
         }
 

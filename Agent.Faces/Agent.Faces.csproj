@@ -37,6 +37,7 @@
     <Compile Include="Faces\AnimationFace.cs" />
     <Compile Include="Faces\BigHands.cs" />
     <Compile Include="Faces\AnimatedBigHands.cs" />
+    <Compile Include="Faces\SimpleDigitalFaceQR.cs" />
     <Compile Include="Faces\DigitalTimeZones.cs" />
     <Compile Include="Faces\MultiFace.cs" />
     <Compile Include="Faces\HouseOfHorology.cs" />
@@ -109,5 +110,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\WatchFaceFromScratch.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RobChartiervCard.gif" />
   </ItemGroup>
 </Project>
