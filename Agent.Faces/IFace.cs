@@ -1,7 +1,7 @@
 using System;
 using Microsoft.SPOT;
 using Microsoft.SPOT.Hardware;
-using Microsoft.SPOT.Input;
+
 
 namespace Agent.Faces
 {

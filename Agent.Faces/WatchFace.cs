@@ -2,7 +2,7 @@ using System;
 using System.Threading;
 using Microsoft.SPOT;
 using Microsoft.SPOT.Hardware;
-using Microsoft.SPOT.Input;
+
 
 namespace Agent.Faces
 {

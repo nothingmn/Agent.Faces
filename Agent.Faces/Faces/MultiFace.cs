@@ -3,7 +3,7 @@ using System.Collections;
 using System.Reflection;
 using Microsoft.SPOT;
 using Microsoft.SPOT.Hardware;
-using Microsoft.SPOT.Input;
+
 using Microsoft.SPOT.Presentation.Media;
 
 namespace Agent.Faces.Faces

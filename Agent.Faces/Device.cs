@@ -16,16 +16,7 @@ namespace Agent.Faces
         public Location Location { get; set; }
         public Border Border { get; set; }
 
-        public static int ScreenHeight
-        {
-            get { return SystemMetrics.ScreenHeight; }
-        }
-
-        public static int ScreenWidth
-        {
-            get { return SystemMetrics.ScreenWidth; }
-        }
-
+   
         public static int AgentSize
         {
             get { return 128; }
@@ -50,7 +41,7 @@ namespace Agent.Faces
                 {
                     if (_DrawingSurface == null)
                     {
-                        _DrawingSurface = new Bitmap(ScreenWidth, ScreenHeight);
+                        _DrawingSurface = new Bitmap(AgentSize, AgentSize);
                         _painter = new Painter(_DrawingSurface);
                     }
                 }
